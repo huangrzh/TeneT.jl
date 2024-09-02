@@ -1,0 +1,11 @@
+[deps]
+CUDA = "052768ef-5323-5732-b1bb-66c8b64840ba"
+IterTools = "c8e1da08-722c-5040-9ed9-7db0dc04731e"
+KrylovKit = "0b1a1467-8014-51b9-945f-bf0ae24f4b77"
+LineSearches = "d3d80556-e9d4-5f37-9878-2ab0fcc64255"
+OMEinsum = "ebe7aa44-baf0-506c-a96f-8464559b3922"
+OMEinsumContractionOrders = "6f22d1fd-8eed-4bb7-9776-e7d684900715"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+TeneT = "260a78e0-cbf2-49ba-8157-48058c700f32"
+Zygote = "e88e6eb3-aa80-5325-afca-941959d7151f"
