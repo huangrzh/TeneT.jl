@@ -1,34 +1,9 @@
-using JLD2
 
-export obs_env
-export AbstractLattice, SquareLattice
-abstract type AbstractLattice end
-struct SquareLattice <: AbstractLattice end
 
-export VUMPSRuntime, SquareVUMPSRuntime
-# NOTE: should be renamed to more explicit names
-"""
-    VUMPSRuntime{LT}
-
-a struct to hold the tensors during the `vumps` algorithm, each is a `Ni` x `Nj` Matrix, containing
-- `d × d × d × d'` `M[i,j]` tensor
-- `D × d' × D` `AL[i,j]` tensor
-- `D × D`     `C[i,j]` tensor
-- `D × d' × D` `AR[i,j]` tensor
-- `D × d' × D` `FL[i,j]` tensor
-- `D × d' × D` `FR[i,j]` tensor
-and `LT` is a AbstractLattice to define the lattice type.
-"""
-struct VUMPSRuntime{LT,T,N,AT <: AbstractArray,CT,ET1,ET2}
-    M::AT
-    AL::ET1
-    C::CT
-    AR::ET1
-    FL::ET2
-    FR::ET2
-    function VUMPSRuntime{LT}(M::AT, AL::ET1, C::CT, AR::ET1, FL::ET2, FR::ET2) where {LT <: AbstractLattice,AT <: AbstractArray, CT <: AbstractArray, ET1 <: AbstractArray, ET2 <: AbstractArray}
-        T, N = eltype(M), ndims(M)
-        new{LT,T,N,AT,CT,ET1,ET2}(M, AL, C, AR, FL, FR)
+struct FixedCorner
+    C::AbstractArray
+    function FixedCorner(C)
+        new(C)
     end
 end
 
